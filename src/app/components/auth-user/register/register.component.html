@@ -1,0 +1,54 @@
+<div class="formContainer">
+    <div class="formSignin">
+        <h2 class="formSigninHeading">Register</h2>
+        <mat-form-field>
+            <mat-label>Username</mat-label>
+            <input matInput required [(ngModel)]="this.user.username" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput required [(ngModel)]="this.user.name" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>E-mail</mat-label>
+            <input matInput required [(ngModel)]="this.user.email" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Phone</mat-label>
+            <input matInput [(ngModel)]="this.user.phone" />
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input
+                matInput
+                required
+                [type]="passwordVisibility ? 'text' : 'password'"
+                [(ngModel)]="this.user.password"
+            />
+            <button mat-icon-button matSuffix (click)="hideClick($event)">
+                <mat-icon>{{
+                    this.passwordVisibility ? "visibility_off" : "visibility"
+                }}</mat-icon>
+            </button>
+        </mat-form-field>
+
+        <button
+            [disabled]="disableButton"
+            class="button"
+            mat-flat-button
+            color="primary"
+            (click)="registerClick()"
+        >
+            Register
+        </button>
+
+        <button
+            class="button"
+            mat-flat-button
+            color="primary"
+            (click)="signInClick()"
+        >
+            Sign In
+        </button>
+    </div>
+</div>

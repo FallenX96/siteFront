@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="formSigninHeading">Transports</h2>
+    <div class="transports-container">
+        @for (transport of transports; track transport.uuid) {
+        <admin-transport-component
+            [transport]="transport"
+            (transportDeleted)="updateTransportsList()"
+        ></admin-transport-component>
+        }
+    </div>
+</div>
